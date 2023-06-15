@@ -10,6 +10,7 @@ public class Persona {
     public String nombre;
     public String apellido;
     public int documentoIdentidad;
+    public static String raza = "Humano";
 
     public Persona() {
     }
@@ -27,6 +28,7 @@ public class Persona {
     public void setNombre(String nombre){this.nombre = nombre;}
     public void setApellido(String apellido){this.apellido = apellido;}
     public void setDocumentoIdentidad(int documentoIdentidad){this.documentoIdentidad = documentoIdentidad;}
+    public void setRaza(String raza){this.raza = raza;}
     //STATIC METHODS
     public static String capitalizeFirstLetter(String word) {
         if (word == null || word.isEmpty()) {
@@ -34,6 +36,13 @@ public class Persona {
         } else {
             return word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();
         }
-}
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + ", documentoIdentidad=" + documentoIdentidad + "raza=" + raza + '}';
+    }
+
+    
     
 }

@@ -1,10 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Crea un método void que reciba un objeto tipo persona como parámetro y utilice el get para
+mostrar sus atributos. Llama ese método desde el main.
  */
 package poo_ejemplo1;
 import Entidad.Persona;
+import PersonaService.PersonaService;
 
 public class POO_ejemplo1 {
 
@@ -12,9 +12,14 @@ public class POO_ejemplo1 {
         Persona primeraPersona = new Persona("carlos", "oller", 37666999);
         Persona segundaPersona = new Persona();
         segundaPersona.setNombre("Daniel");
-        System.out.println(primeraPersona.getNombre() + " " + primeraPersona.getApellido());
-        System.out.println(primeraPersona.getDocumentoIdentidad());
-        System.out.println(segundaPersona.getNombre());
+        System.out.println(segundaPersona.toString());
+        segundaPersona.setRaza("Marciano");
+        System.out.println(primeraPersona.toString());
+        System.out.println(segundaPersona.toString());
+        System.out.println("-----------");
+        
+        PersonaService terceraPersona = new PersonaService();
+        terceraPersona.mostrarPersona(primeraPersona);
     }
     
 }

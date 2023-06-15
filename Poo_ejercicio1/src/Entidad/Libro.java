@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class Libro {
 
     // ATTRIBUTES
-    public String isbn;
-    public String titulo;
-    public String autor;
-    public int numeroPaginas;
+    private String isbn;
+    private String titulo;
+    private String autor;
+    private int numeroPaginas;
 
     // CONSTRUCTORS
     public Libro() {
@@ -56,24 +56,8 @@ public class Libro {
     }
 
     // METHODS    
-    public void getInfo() {
-        System.out.println("-------------------------");
-        System.out.println("ISBN: " + this.isbn);
-        System.out.println("Titulo: " + this.titulo);
-        System.out.println("Autor: " + this.autor);
-        System.out.println("Numero Paginas: " + this.numeroPaginas);
-        System.out.println("-------------------------");
-    }
-
-    public void setValuesFromUserInput() {
-        Scanner input = new Scanner(System.in);
-        System.out.print("ISBN: ");
-        setIsbn(input.nextLine());
-        System.out.print("Titulo: ");
-        setTitulo(input.nextLine());
-        System.out.print("Autor: ");
-        setAutor(input.nextLine());
-        System.out.print("Numero Paginas: ");
-        setNumeroPaginas(input.nextInt());
-    }
+    @Override
+    public String toString() {
+        return "Libro{" + "isbn=" + isbn + ", titulo=" + titulo + ", autor=" + autor + ", numeroPaginas=" + numeroPaginas + '}';
+    }   
 }

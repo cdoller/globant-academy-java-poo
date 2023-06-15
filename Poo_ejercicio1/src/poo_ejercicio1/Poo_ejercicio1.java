@@ -8,13 +8,14 @@ numero de páginas.
 package poo_ejercicio1;
 
 import Entidad.Libro;
+import Servicio.LibroService;
 
 public class Poo_ejercicio1 {
 
     public static void main(String[] args) {
-        Libro l1 = new Libro();
-        l1.setValuesFromUserInput();
-        l1.getInfo();
+        LibroService libroService = new LibroService();
+        Libro libro1 = libroService.crearLibro();
+        libroService.mostrarLibro(libro1);
     }
 
 }
