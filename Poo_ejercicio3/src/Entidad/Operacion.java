@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Entidad;
 
-public class Operacion{
+public class Operacion {
+
     private int numero1;
     private int numero2;
 
@@ -33,6 +33,10 @@ public class Operacion{
     public void setNumero2(int numero2) {
         this.numero2 = numero2;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Operacion{" + "numero1=" + numero1 + ", numero2=" + numero2 + '}';
+    }
+
 }

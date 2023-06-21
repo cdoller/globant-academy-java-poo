@@ -17,17 +17,18 @@ informa al usuario. Si no, se hace la división y se devuelve el resultado al ma
  */
 package poo_ejercicio3;
 
-/**
- *
- * @author User
- */
+import Entidad.Operacion;
+import Servicio.OperacionService;
+
 public class Poo_ejercicio3 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        OperacionService operacionService = new OperacionService();
+        Operacion operacion = operacionService.crearOperacion();
+        System.out.println("La suma es: " + operacionService.sumar(operacion));
+        System.out.println("La resta es: " + operacionService.restar(operacion));
+        System.out.println("La multiplicacion es: " + operacionService.multiplicar(operacion));
+        System.out.println("La division es: " + operacionService.division(operacion));
     }
-    
+
 }
