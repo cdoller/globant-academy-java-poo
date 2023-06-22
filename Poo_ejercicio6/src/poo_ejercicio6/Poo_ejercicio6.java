@@ -22,29 +22,53 @@ package poo_ejercicio6;
 
 import Entidad.Cafetera;
 import Servicio.ServicioCafetera;
+import java.util.Scanner;
 
 public class Poo_ejercicio6 {
 
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         ServicioCafetera serviceCafetera = new ServicioCafetera();
-        
-        Cafetera nespresso = serviceCafetera.crearCafetera(500.0);
+        Cafetera nespresso = serviceCafetera.crearCafetera();
+        int opcionMenu;
 
-        System.out.println("La cafetera se lleno con " + serviceCafetera.llenarCafetera(nespresso)); // llenamos la cafetera
-
-        System.out.println("\nCliente 1: ");
-        serviceCafetera.servirCafe(200, nespresso); // taza llena
-        System.out.println("Cliente 2: ");
-        serviceCafetera.servirCafe(200, nespresso); // taza llena
-        System.out.println("Cliente 3: ");
-        serviceCafetera.servirCafe(200, nespresso); // media taza = 100cc
-        System.out.println("Cliente 4: ");
-        serviceCafetera.servirCafe(200, nespresso); // no le podemos servir nada
-        
-        serviceCafetera.vaciarCafetera(nespresso); // vaciamos la cafetera
-        serviceCafetera.agregarCafe(nespresso, 250); // agregamos 250cc
-        serviceCafetera.agregarCafe(nespresso, 350); // agregamos 250cc
-        serviceCafetera.agregarCafe(nespresso, 100); // no se puede agregar mas, esta llena
+        do {
+            imprimirMenu(serviceCafetera, nespresso);
+            System.out.print("Ingrese una opcion: ");
+            opcionMenu = input.nextInt();
+            switch (opcionMenu) {
+                case 1:
+                    serviceCafetera.llenarCafetera(nespresso);
+                    break;
+                case 2:
+                    serviceCafetera.vaciarCafetera(nespresso);
+                    break;
+                case 3:
+                    System.out.print("Ingrese la cantidad de cafe que desea en su taza: ");
+                    serviceCafetera.servirCafe(input.nextDouble(), nespresso);
+                    break;
+                case 4:
+                    System.out.print("Ingrese la cantidad de cafe que desea agregar a la cafetera: ");
+                    serviceCafetera.agregarCafe(input.nextDouble(), nespresso);
+                    break;
+                case 5:
+                    System.out.println("Adios! Gracias por usar nuestra Nespresso!");
+                    break;
+                default:
+                    System.out.println("Opcion NO Valida, ingrese nuevamente.");
+            }
+        } while (opcionMenu != 9);
     }
-    
+
+    public static void imprimirMenu(ServicioCafetera cafeteraServ, Cafetera cafetera){
+        System.out.println("------------------------------");
+        System.out.println("--------MENU Nespresso--------");
+        System.out.println("-Cantidad Cafe: [ " + cafeteraServ.cantidadActual(cafetera) + " / " + cafeteraServ.capacidadMaxima(cafetera) + " ]");
+        System.out.println("1) Llenar Cafetera");
+        System.out.println("2) Vaciar Cafetera");
+        System.out.println("3) Servir Taza");
+        System.out.println("4) Agregar Cafe");
+        System.out.println("9) SALIR");
+        System.out.println("------------------------------");
+    }
 }
