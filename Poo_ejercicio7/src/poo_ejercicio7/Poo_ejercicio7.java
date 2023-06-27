@@ -5,7 +5,7 @@ import Servicio.PersonaServicio;
 public class Poo_ejercicio7 {
 
     public static void main(String[] args) {
-        PersonaServicio arrayPersonas[] = new PersonaServicio[1];
+        PersonaServicio arrayPersonas[] = new PersonaServicio[4];
         cargarPersonas(arrayPersonas);
         imprimirPersonas(arrayPersonas);
         resultadosPersonas(arrayPersonas);
@@ -21,9 +21,12 @@ public class Poo_ejercicio7 {
     }
     
     public static void imprimirPersonas(PersonaServicio[] personas){
+        System.out.println("--------------------");
+        System.out.println("Personas ingresadas:");
         for(int i=0; i<personas.length; i++){
-            System.out.println(personas[i].imprimirDatosPersona());
+            System.out.println("Persona N" + (i+1) + " " + personas[i].imprimirDatosPersona());
         }
+        System.out.println("--------------------");
     }
     
     public static void resultadosPersonas(PersonaServicio[] personas){
@@ -40,6 +43,8 @@ public class Poo_ejercicio7 {
                 personasSobrePeso++;
             }
         }
+        System.out.println("");
+        System.out.println("------Resultados------");
         System.out.println("Personas con sobrepeso: " + personasSobrePeso);
         System.out.println("Personas con peso ideal: " + personasPesoIdeal);
         System.out.println("Personas con bajopeso: " + personasBajoPeso);

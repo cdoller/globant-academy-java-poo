@@ -33,10 +33,13 @@ public class PersonaServicio {
         System.out.println("El IMC de " + persona.getNombre() + " es : " + imc);
         persona.setImc(imc);
         if(persona.getImc()<20){
+            System.out.println("La persona tiene bajo peso");
             return -1;
         }else if(persona.getImc()<=25){
+            System.out.println("La persona tiene el peso ideal");
             return 0;
         }else{
+            System.out.println("La persona tiene sobre peso");
             return 1;
         }
     }
