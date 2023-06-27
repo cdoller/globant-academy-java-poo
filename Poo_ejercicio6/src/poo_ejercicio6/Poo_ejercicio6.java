@@ -20,7 +20,6 @@ recibe y se añade a la cafetera la cantidad de café indicada.
  */
 package poo_ejercicio6;
 
-import Entidad.Cafetera;
 import Servicio.ServicioCafetera;
 import java.util.Scanner;
 
@@ -28,28 +27,28 @@ public class Poo_ejercicio6 {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        ServicioCafetera serviceCafetera = new ServicioCafetera();
-        Cafetera nespresso = serviceCafetera.crearCafetera();
+        ServicioCafetera nespresso = new ServicioCafetera();
+        nespresso.setCapacidadCafetera();
         int opcionMenu;
 
         do {
-            imprimirMenu(serviceCafetera, nespresso);
+            imprimirMenu(nespresso);
             System.out.print("Ingrese una opcion: ");
             opcionMenu = input.nextInt();
             switch (opcionMenu) {
                 case 1:
-                    serviceCafetera.llenarCafetera(nespresso);
+                    nespresso.llenarCafetera();
                     break;
                 case 2:
-                    serviceCafetera.vaciarCafetera(nespresso);
+                    nespresso.vaciarCafetera();
                     break;
                 case 3:
                     System.out.print("Ingrese la cantidad de cafe que desea en su taza: ");
-                    serviceCafetera.servirCafe(input.nextDouble(), nespresso);
+                    nespresso.servirCafe(input.nextDouble());
                     break;
                 case 4:
                     System.out.print("Ingrese la cantidad de cafe que desea agregar a la cafetera: ");
-                    serviceCafetera.agregarCafe(input.nextDouble(), nespresso);
+                    nespresso.agregarCafe(input.nextDouble());
                     break;
                 case 5:
                     System.out.println("Adios! Gracias por usar nuestra Nespresso!");
@@ -60,10 +59,10 @@ public class Poo_ejercicio6 {
         } while (opcionMenu != 9);
     }
 
-    public static void imprimirMenu(ServicioCafetera cafeteraServ, Cafetera cafetera){
+    public static void imprimirMenu(ServicioCafetera cafeteraServ){
         System.out.println("------------------------------");
         System.out.println("--------MENU Nespresso--------");
-        System.out.println("-Cantidad Cafe: [ " + cafeteraServ.cantidadActual(cafetera) + " / " + cafeteraServ.capacidadMaxima(cafetera) + " ]");
+        System.out.println("-Cantidad Cafe: [ " + cafeteraServ.cantidadActual() + " / " + cafeteraServ.capacidadMaxima() + " ]");
         System.out.println("1) Llenar Cafetera");
         System.out.println("2) Vaciar Cafetera");
         System.out.println("3) Servir Taza");
