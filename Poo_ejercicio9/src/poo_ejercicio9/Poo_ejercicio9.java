@@ -1,4 +1,4 @@
-package Poo_ejercicio9;
+package poo_ejercicio9;
 
 import Servicio.MatematicaServicio;
 
