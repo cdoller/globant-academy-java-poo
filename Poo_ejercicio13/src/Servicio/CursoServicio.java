@@ -26,7 +26,7 @@ public class CursoServicio {
         System.out.println("Cant. Dias por semana: 3");
         curso.setCantDiasPorSemana(3);
         System.out.println("Turno Tarde");
-        curso.setTurno("Tarde");
+        curso.setTurno(Curso.Turno.TARDE);
         System.out.println("Precio por hora: 5 USD");
         curso.setPrecioPorHora(5);
         System.out.println("Ingrese los alumnos: ");

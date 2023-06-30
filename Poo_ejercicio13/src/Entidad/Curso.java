@@ -1,18 +1,20 @@
 package Entidad;
 
 public class Curso {
-
+    
+    public enum Turno {MANIANA, TARDE};
+    
     private String nombreCurso;
     private int cantHorasPorDia;
     private int cantidadDiasPorSemana;
-    private String turno;
+    private Turno turno;
     private double precioPorHora;
     private String[] alumnos = new String[5];
 
     public Curso() {
     }
 
-    public Curso(String nombreCurso, int cantHorasPorDia, int cantidadDiasPorSemana, String turno, double precioPorHora) {
+    public Curso(String nombreCurso, int cantHorasPorDia, int cantidadDiasPorSemana, Turno turno, double precioPorHora) {
         this.nombreCurso = nombreCurso;
         this.cantHorasPorDia = cantHorasPorDia;
         this.cantidadDiasPorSemana = cantidadDiasPorSemana;
@@ -44,11 +46,11 @@ public class Curso {
         this.cantidadDiasPorSemana = cantidadDiasPorSemana;
     }
 
-    public String getTurno() {
+    public Turno getTurno() {
         return turno;
     }
 
-    public void setTurno(String turno) {
+    public void setTurno(Turno turno) {
         this.turno = turno;
     }
 
