@@ -43,7 +43,7 @@ public class Ahorcado {
         } else {
             System.out.println("Letra repetida, ingrese nuevamente");
         }
-        return letraRepetida;
+        return !letraRepetida;
     }
 
     //// Jugador
@@ -150,8 +150,8 @@ public class Ahorcado {
         }
     }
 
-    public void hacerIntento(String letra) {
-        if (agregarLetraIngresada(letra)) {
+    public void hacerIntento(String letra) {        
+        if (!agregarLetraIngresada(letra)) {
             return;
         }
 
